@@ -16,7 +16,7 @@ $(document).ready(function(){
           $newBook.append('<td>' + currentBook.author + '</td>');
           $newBook.append('<td>' + currentBook.edition + '</td>');
           $newBook.append('<td>' + currentBook.publisher + '</td>');
-          $('#bookShelf').append($newBook);
+          $('#bookShelf').prepend($newBook);
         }
       }
     });
@@ -37,21 +37,6 @@ $(document).ready(function(){
         console.log(response);
         getBookData();
         $('#newBookForm > input').val('');
-      }
-    });
-  });
-
-  $('#bookShelf').on('click', '.saveButton', function(){
-    var newBookObject = {};
-    newBookObject.title = $('#newBookTitle').val();
-    newBookObject.author = $('#newBookAuthor').val();
-    $.ajax({
-      type: 'POST',
-      url: '/books/new',
-      data: newBookObject,
-      success: function(response){
-        console.log(response);
-        getBookData();
       }
     });
   });
