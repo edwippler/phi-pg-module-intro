@@ -16,7 +16,7 @@ $(document).ready(function(){
           $newBook.append('<td>' + currentBook.author + '</td>');
           $newBook.append('<td>' + currentBook.edition + '</td>');
           $newBook.append('<td>' + currentBook.publisher + '</td>');
-          $('#bookShelf').append($newBook);
+          $('#bookShelf').prepend($newBook);
         }
       }
     });
